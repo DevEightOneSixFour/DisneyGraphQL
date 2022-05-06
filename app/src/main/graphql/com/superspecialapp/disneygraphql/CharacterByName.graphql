@@ -1,0 +1,5 @@
+query CharacterByName($characterName: String!){
+    characterByName(name:$characterName) {
+        ...CharacterFragment
+    }
+}
