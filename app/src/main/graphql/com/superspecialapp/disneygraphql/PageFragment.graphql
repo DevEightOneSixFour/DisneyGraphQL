@@ -1,0 +1,6 @@
+fragment PageFragment on paginationInfo{
+    hasPreviousPage
+    hasNextPage
+    pageItemCount
+    totalPages
+}

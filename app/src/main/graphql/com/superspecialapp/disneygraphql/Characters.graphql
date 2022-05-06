@@ -1,0 +1,10 @@
+query Characters($page: Int!){
+    characters(page: $page) {
+        items {
+            ...CharacterFragment
+        }
+        paginationInfo {
+            ...PageFragment
+        }
+    }
+}

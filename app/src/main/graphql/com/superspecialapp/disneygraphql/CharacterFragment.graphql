@@ -1,0 +1,15 @@
+fragment CharacterFragment on Character {
+    _id
+    url
+    name
+    sourceUrl
+    imageUrl
+    films
+    shortFilms
+    tvShows
+    videoGames
+    alignment
+    parkAttractions
+    allies
+    enemies
+}

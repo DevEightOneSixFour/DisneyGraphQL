@@ -1,0 +1,34 @@
+directive @specifiedBy(url: String!) on SCALAR
+type Character {
+    _id: Int
+    url: String
+    name: String
+    sourceUrl: String
+    imageUrl: String
+    films: [String]
+    shortFilms: [String]
+    tvShows: [String]
+    videoGames: [String]
+    alignment: String
+    parkAttractions: [String]
+    allies: [String]
+    enemies: [String]
+}
+
+type CharacterPage {
+    items: [Character]
+    paginationInfo: paginationInfo
+}
+
+type paginationInfo {
+    hasPreviousPage: Boolean!
+    hasNextPage: Boolean!
+    pageItemCount: Int!
+    totalPages: Int!
+}
+
+type Query {
+    character(_id: Int!): Character
+    characterByName(name: String!): Character
+    characters(page: Int): CharacterPage
+}
