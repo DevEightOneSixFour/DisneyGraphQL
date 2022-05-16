@@ -29,11 +29,11 @@ class CharacterRepositoryImpl @Inject constructor(
             val response = api.getApolloClient().query(CharactersQuery(page)).await()
             if(!response.hasErrors()) {
                 response.apply {
-                    emit(UIState.Success(this.data?.characters?.toDisneyResponse()))
+                    emit(UIState.Success(this.data?.characters?.toDisneyResponse()?.data))
                 }
-            } else throw FailedResponseException()
+            } else throw Exception()
 
-        } catch (e: CustomException) {
+        } catch (e: Exception) {
             emit(UIState.Error(e))
         }
     }
@@ -50,9 +50,9 @@ class CharacterRepositoryImpl @Inject constructor(
                         )
                     )
                 }
-            } else throw FailedResponseException()
+            } else throw Exception()
 
-        } catch (e: CustomException) {
+        } catch (e: Exception) {
             emit(UIState.Error(e))
         }
     }

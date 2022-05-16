@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DisneyGraphQL</string>
+    <string name="error_message">Password is incorrect</string>
 </resources>
