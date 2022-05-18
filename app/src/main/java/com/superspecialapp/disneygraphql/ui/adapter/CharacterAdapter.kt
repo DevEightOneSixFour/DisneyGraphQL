@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.superspecialapp.disneygraphql.R
 import com.superspecialapp.disneygraphql.data.model.DisneyItem
 import com.superspecialapp.disneygraphql.databinding.CharacterListItemBinding
 
@@ -24,6 +26,8 @@ class CharacterAdapter(private val itemList: MutableList<DisneyItem> = mutableLi
                 binding.tvCharacterItemName.text = item.name
                 Glide.with(binding.ivCharacterItemImage)
                     .load(item.imageUrl)
+                    .placeholder(R.drawable.mickey_ears)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(binding.ivCharacterItemImage)
 
             }
