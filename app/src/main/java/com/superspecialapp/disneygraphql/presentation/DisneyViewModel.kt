@@ -20,6 +20,10 @@ class DisneyViewModel @Inject constructor(
     private val _uiState= MutableLiveData<UIState>()
     val uiState: LiveData<UIState> get() = _uiState
 
+    init {
+        queryCharacters(0)
+    }
+
     fun queryCharacters(page: Int) {
         CoroutineScope(Dispatchers.Main).launch {
             repository.queryCharacters(page).collect { _uiState.postValue(it) }
