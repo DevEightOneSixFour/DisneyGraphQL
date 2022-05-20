@@ -1,5 +1,6 @@
 package com.superspecialapp.disneygraphql.utils
 
+// Not used
 open class CustomException: Exception() {
     open val msg = "Error"
 }

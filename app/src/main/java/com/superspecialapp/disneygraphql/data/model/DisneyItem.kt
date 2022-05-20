@@ -18,6 +18,8 @@ data class DisneyItem(
     val url: String? = null,
 )
 
+// Extension function for converting the generated GraphQL data into a data class
+//      that can be used to stored data or set item states
 fun CharacterFragment.toDisneyItem() =
     DisneyItem(
         id = this._id,
